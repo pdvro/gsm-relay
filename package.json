@@ -1,19 +1,25 @@
 {
-  "name": "sample-expressjs",
+  "name": "gsm-relay",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-	"start": "node index.js",
+	"start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/digitalocean/sample-expressjs"
+    "url": "github.com/digitalocean/gsm-relay"
   },
-  "author": "",
+  "author": "Adrian Ruj",
   "license": "MIT",
+  "description": "Send sms via API with Teltonika Routers",
   "dependencies": {
-    "express": "^4.17.1"
+	  "exios": "^1.11.0",
+	  "dotenv": "^17.2.1",
+	  "express": "^4.19.2",
+	  "express-session": "^1.18.0",
+	  "ejs":"^3.1.10"
+	  
   }
 }
