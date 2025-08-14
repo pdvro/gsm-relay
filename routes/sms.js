@@ -57,8 +57,8 @@ router.post('/sms', checkToken, (req, res) => {
 // Handle test SMS requests
 router.post('/test-sms', checkLogin, (req, res) => {
     const testMessage = {
-        to: '0725253261',
-        message: 'welcometotraccar-proxy'
+        to: 'yourtestnumber',
+        message: 'yourtestmessage'
     };
     const smsQueue = req.app.locals.smsQueue;
     smsQueue.push(testMessage);
