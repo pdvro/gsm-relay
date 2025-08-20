@@ -51,7 +51,7 @@ if (devices.length === 0) {
     process.exit(1); // Exit if no devices are configured
 }
 
-const SEND_DELAY_MS = 3000; // 3-second delay between sends
+const SEND_DELAY_MS = 3000; // 3-second delay between sends 
 
 // --- In-memory Queue ---
 const smsQueue = [];
@@ -104,13 +104,13 @@ async function processQueue() {
                 throw new Error('Could not get auth token');
             }
 
-            // Using POST method for Teltonika firmware 7.14.3+
+            // Using POST method for Teltonika firmware 7+
             const teltonikaUrl = `${device.url}/api/messages/actions/send`; // Corrected SMS send endpoint
             const requestData = {
-                data: { // Added 'data' wrapper
+                data: {
                     number: to,
-                    message: message, // Changed 'text' to 'message'
-                    modem: "1-1" // Added 'modem' - assuming "1-1" is a default or can be configured
+                    message: message, 
+                    modem: "1-1" // Added 'modem' - assuming "1-1" is default
                 }
             };
             const config = {
