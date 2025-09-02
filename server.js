@@ -72,7 +72,7 @@ async function getAuthToken(device) {
         const response = await axios.post(`${device.url}/api/login`, {
             username: device.username,
             password: device.password
-        }, { httpsAgent }); // Added httpsAgent
+        }, { httpsAgent }); 
 
         if (response.data && response.data.success === true && response.data.data && response.data.data.token) {
             device.token = response.data.data.token; // Access token from response.data.data.token
@@ -105,19 +105,19 @@ async function processQueue() {
             }
 
             // Using POST method for Teltonika firmware 7+
-            const teltonikaUrl = `${device.url}/api/messages/actions/send`; // Corrected SMS send endpoint
+            const teltonikaUrl = `${device.url}/api/messages/actions/send`; 
             const requestData = {
                 data: {
                     number: to,
                     message: message, 
-                    modem: "1-1" // Added 'modem' - assuming "1-1" is default
+                    modem: "1-1" 
                 }
             };
             const config = {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 },
-                httpsAgent // Added httpsAgent
+                httpsAgent 
             };
 
             console.log(`Sending SMS to ${to} via device ${currentDeviceIndex + 1} (retry ${sms.retryCount})`);
