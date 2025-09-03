@@ -11,7 +11,7 @@
     "type": "git",
     "url": "github.com/digitalocean/gsm-relay"
   },
-  "author": "Adrian Ruj",
+  "author": "AR",
   "license": "MIT",
   "description": "Send sms via API with Teltonika Routers",
   "dependencies": {
